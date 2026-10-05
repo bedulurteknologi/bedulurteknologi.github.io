@@ -9,6 +9,7 @@ import { projectsData } from '../../data/projects';
 
 export const SelectedWork: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<FilterCategory>('all');
+  const [showAll, setShowAll] = useState(false);
 
   // Compute category counts
   const counts = useMemo(() => {
@@ -48,15 +49,23 @@ export const SelectedWork: React.FC = () => {
 
         <ProjectFilter
           activeFilter={activeFilter}
-          onFilterChange={setActiveFilter}
+          onFilterChange={(filter) => { setActiveFilter(filter); setShowAll(false); }}
           counts={counts}
         />
 
         <div className="portfolio-grid">
-          {filteredProjects.map((project, index) => (
+          {(showAll ? filteredProjects : filteredProjects.slice(0, 9)).map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
+        {filteredProjects.length > 9 && (
+          <div className="mt-12 text-center">
+            <p className="text-sm text-slate-400 mb-4">{showAll ? filteredProjects.length : 9} of {filteredProjects.length} projects</p>
+            <button type="button" className="px-6 py-3 rounded-xl border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 transition-colors" onClick={() => setShowAll(!showAll)}>
+              {showAll ? 'Show fewer projects' : 'Explore all projects'}
+            </button>
+          </div>
+        )}
       </Container>
     </section>
   );

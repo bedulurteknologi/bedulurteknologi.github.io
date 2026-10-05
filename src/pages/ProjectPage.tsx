@@ -24,7 +24,7 @@ export const ProjectPage: React.FC = () => {
         <p className="text-slate-400 mb-8 max-w-md">
           The requested case study could not be located in our portfolio index.
         </p>
-        <Button variant="primary" href="/#work">
+        <Button variant="primary" href="/#/#work">
           Return to Portfolio
         </Button>
       </div>
@@ -56,7 +56,7 @@ export const ProjectPage: React.FC = () => {
               {project.category}
             </span>
             <span className="text-slate-600">•</span>
-            <span className="text-xs font-mono-tech text-slate-400">Deployed {project.year}</span>
+            <span className="text-xs font-mono-tech text-slate-400">{project.provenance ? 'Professional archive' : `Deployed ${project.year}`}</span>
             {project.clientType && (
               <>
                 <span className="text-slate-600">•</span>
@@ -90,7 +90,7 @@ export const ProjectPage: React.FC = () => {
               <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
               <span className="w-3 h-3 rounded-full bg-green-500/70" />
             </div>
-            <div className="text-xs font-mono-tech text-slate-400">
+            <div className="hidden sm:block text-xs font-mono-tech text-slate-400 truncate px-4">
               bti://architecture/{project.slug}/primary-overview
             </div>
             <div className="w-12 text-right">
@@ -104,7 +104,11 @@ export const ProjectPage: React.FC = () => {
           />
         </div>
 
-        <p className="text-xs text-slate-500 -mt-16 mb-16">{project.visualNote}</p>
+        <div className="-mt-16 mb-16 space-y-3">
+          {project.imageSummary && <p className="text-sm text-slate-300 leading-relaxed max-w-3xl">{project.imageSummary}</p>}
+          <p className="text-xs text-slate-500">{project.visualNote}</p>
+          {project.provenance && <p className="text-xs text-slate-400">{project.provenance}</p>}
+        </div>
         {/* Structured Case Study Sections */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-20 sm:mb-28">
           {/* Left Column: Challenge & Solution */}
@@ -142,7 +146,7 @@ export const ProjectPage: React.FC = () => {
                 Engineered Solution
               </span>
               <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                How We Designed & Built It
+                {project.provenance ? 'The System Approach' : 'How We Designed & Built It'}
               </h3>
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
                 {project.solution}
@@ -193,7 +197,7 @@ export const ProjectPage: React.FC = () => {
             {/* Technology Stack Details */}
             <div className="p-7 rounded-2xl bg-[#090B10] border border-white/[0.08] space-y-4">
               <h3 className="text-lg font-bold text-white tracking-tight">
-                Technology Specifications
+                {project.provenance ? 'Application Focus' : 'Technology Specifications'}
               </h3>
               <div className="flex flex-wrap gap-2 pt-2">
                 {project.technologies.map((t) => (
@@ -216,7 +220,7 @@ export const ProjectPage: React.FC = () => {
               <Button
                 variant="primary"
                 size="md"
-                href="/#contact"
+                href="/#/#contact"
                 className="w-full"
               >
                 Discuss Your Requirements

@@ -1,4 +1,5 @@
 import type { Project } from '../types';
+import { additionalProjects } from './additionalProjects';
 
 
 const initialProjects: Project[] = [
@@ -377,9 +378,9 @@ const portfolioAssets: Record<string, string> = {
   'corporate-web': 'corporate-web/presentation.jpeg',
 };
 
-export const projectsData: Project[] = initialProjects.map(project => ({
+export const projectsData: Project[] = [...initialProjects.map(project => ({
   ...project,
   coverImage: `${import.meta.env.BASE_URL}images/projects/${portfolioAssets[project.slug]}`,
   gallery: [`${import.meta.env.BASE_URL}images/projects/${portfolioAssets[project.slug]}`, ...(project.slug === 'patrol-guard' ? [import.meta.env.BASE_URL + 'images/projects/patrol-guard/original-screens.png'] : [])],
   visualNote: project.slug === 'patrol-guard' ? 'AI-generated device presentation based on original app screens; original screenshots are included below.' : 'Project presentation supplied by the studio',
-}));
+})), ...additionalProjects];

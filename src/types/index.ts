@@ -20,6 +20,8 @@ export interface Project {
   liveUrl?: string;
   demoUrl?: string;
   visualNote?: string;
+  imageSummary?: string;
+  provenance?: string;
 }
 
 export interface Service {
