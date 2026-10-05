@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #050505;
+    --bg-secondary: #08090A;
+    --bg-surface: #0E1015;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-highlight: rgba(0, 242, 254, 0.3);
+    --accent-cyan: #00f2fe;
+    --accent-blue: #4facfe;
+    --accent-indigo: #6366f1;
+  }
+
+  body {
+    background-color: #050505;
+    color: #94a3b8;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar for dark tech aesthetic */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e2430;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00f2fe;
+  }
+}
+
+/* Subtle background grid pattern */
+.bg-tech-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.bg-tech-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(14, 16, 21, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-interactive {
+  background: rgba(14, 16, 21, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  background: rgba(20, 24, 33, 0.85);
+  border-color: rgba(0, 242, 254, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.1);
+}
+
+/* Monospace font utility for engineering tags */
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Glow effects - subtle and disciplined, not blinding */
+.text-glow-cyan {
+  text-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+}
+
+.radial-ambient {
+  background: radial-gradient(circle at 50% 30%, rgba(0, 242, 254, 0.07) 0%, rgba(5, 5, 5, 0) 70%);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+section[id] { scroll-margin-top: 100px; }
+
+/* Editorial portfolio: complete artwork, generous scale, varied composition. */
+.portfolio-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 72px 40px; }
+.project-featured { grid-column: 1 / -1; }
+.project-visual { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #11151b; border: 1px solid rgba(255,255,255,.1); border-radius: 18px; transition: transform .35s, border-color .35s; }
+.project-visual:hover { border-color: rgba(103,232,249,.45); }
+.project-featured .project-visual { aspect-ratio: 16 / 9; background: radial-gradient(ellipse at center, #152521, #0b1210); }
+.project-featured .project-visual img { padding: 20px; }
+@media (max-width: 767px) { .portfolio-grid { grid-template-columns: 1fr; gap: 48px; } .project-featured .project-visual { aspect-ratio: 1; } .project-featured .project-visual img { padding: 0; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }

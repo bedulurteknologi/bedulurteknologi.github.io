@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="bti-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="#08090A" stroke="#1f242e" stroke-width="1.5"/>
+  <path d="M7 9h6.5a4 4 0 0 1 0 8H7zm0 8h7.5a4.5 4.5 0 0 1 0 9H7z" fill="none" stroke="url(#bti-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="24" cy="17" r="2.5" fill="#00f2fe" />
+</svg>

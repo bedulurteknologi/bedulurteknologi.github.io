@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bedulurteknologi.github.io/sitemap.xml
+

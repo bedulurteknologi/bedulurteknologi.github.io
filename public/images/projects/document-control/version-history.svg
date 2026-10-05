@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c10" />
+      <stop offset="50%" stop-color="#0e1117" />
+      <stop offset="100%" stop-color="#07080b" />
+    </linearGradient>
+    <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.3"/>
+    </linearGradient>
+    <pattern id="grid-pat" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="750" fill="url(#bg-grad)"/>
+  <rect width="1200" height="750" fill="url(#grid-pat)"/>
+  <circle cx="950" cy="180" r="300" fill="#38bdf8" opacity="0.06" filter="blur(60px)"/>
+  <circle cx="200" cy="550" r="250" fill="#0284c7" opacity="0.04" filter="blur(50px)"/>
+
+  <!-- Window Frame -->
+  <g transform="translate(60, 50)">
+    <rect width="1080" height="650" rx="16" fill="#0d1017" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+    
+    <!-- Title bar -->
+    <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 1064 0 C 1072.84 0 1080 7.16 1080 16 L 1080 52 L 0 52 Z" fill="#131722"/>
+    <line x1="0" y1="52" x2="1080" y2="52" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    
+    <!-- Window controls -->
+    <circle cx="30" cy="26" r="6" fill="#ef4444" opacity="0.8"/>
+    <circle cx="50" cy="26" r="6" fill="#f59e0b" opacity="0.8"/>
+    <circle cx="70" cy="26" r="6" fill="#10b981" opacity="0.8"/>
+    
+    <!-- Tab pill -->
+    <rect x="120" y="12" width="340" height="28" rx="6" fill="#0a0c10" stroke="rgba(255,255,255,0.05)"/>
+    <text x="140" y="31" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">bti://document-control/version-history</text>
+
+    <!-- Header area inside app -->
+    <g transform="translate(40, 80)">
+      <rect x="0" y="0" width="1000" height="60" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.04)"/>
+      <rect x="20" y="16" width="100" height="28" rx="6" fill="rgba(0,242,254,0.1)"/>
+      <text x="32" y="35" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing="1">ENTERPRISE CMS</text>
+      <text x="140" y="36" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="600">Immutable Version Audit Trail</text>
+      <circle cx="960" cy="30" r="5" fill="#10b981"/>
+      <text x="900" y="35" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="500">SYSTEM LIVE</text>
+    </g>
+
+    <!-- Body content mock -->
+    <g transform="translate(40, 160)">
+      <!-- Left sidebar -->
+      <rect x="0" y="0" width="220" height="420" rx="10" fill="rgba(255,255,255,0.015)" stroke="rgba(255,255,255,0.04)"/>
+      <rect x="20" y="24" width="180" height="14" rx="4" fill="rgba(255,255,255,0.1)"/>
+      <rect x="20" y="60" width="140" height="10" rx="3" fill="rgba(255,255,255,0.05)"/>
+      <rect x="20" y="85" width="160" height="10" rx="3" fill="rgba(255,255,255,0.05)"/>
+      <rect x="20" y="110" width="130" height="10" rx="3" fill="rgba(255,255,255,0.05)"/>
+      <rect x="20" y="135" width="150" height="10" rx="3" fill="rgba(255,255,255,0.05)"/>
+      
+      <line x1="20" y1="170" x2="200" y2="170" stroke="rgba(255,255,255,0.06)"/>
+      
+      <rect x="20" y="195" width="120" height="10" rx="3" fill="rgba(255,255,255,0.04)"/>
+      <rect x="20" y="220" width="140" height="10" rx="3" fill="rgba(255,255,255,0.04)"/>
+      <rect x="20" y="245" width="110" height="10" rx="3" fill="rgba(255,255,255,0.04)"/>
+      <rect x="20" y="270" width="150" height="10" rx="3" fill="rgba(255,255,255,0.04)"/>
+
+      <!-- Right stats & main panels -->
+      <g transform="translate(240, 0)">
+        <!-- 3 Metric Cards -->
+        <rect x="0" y="0" width="235" height="110" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)"/>
+        <text x="20" y="32" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">OPERATIONAL STATUS</text>
+        <text x="20" y="68" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="700">OPTIMAL</text>
+        <rect x="20" y="85" width="195" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
+        <rect x="20" y="85" width="160" height="4" rx="2" fill="#38bdf8"/>
+
+        <rect x="260" y="0" width="235" height="110" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)"/>
+        <text x="280" y="32" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">ACTIVE RECORDS</text>
+        <text x="280" y="68" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="700">SYNCED</text>
+        <rect x="280" y="85" width="195" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
+        <rect x="280" y="85" width="180" height="4" rx="2" fill="#0284c7"/>
+
+        <rect x="520" y="0" width="240" height="110" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)"/>
+        <text x="540" y="32" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">VERIFIED WORKFLOW</text>
+        <text x="540" y="68" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="700">AUDITED</text>
+        <rect x="540" y="85" width="200" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
+        <rect x="540" y="85" width="190" height="4" rx="2" fill="#10b981"/>
+
+        <!-- Main Visual Panel -->
+        <g transform="translate(0, 130)">
+          <rect x="0" y="0" width="760" height="290" rx="10" fill="rgba(10,12,16,0.9)" stroke="rgba(255,255,255,0.06)"/>
+          
+          <!-- Waveform / chart / data rows -->
+          <path d="M 30 180 Q 150 90 270 140 T 510 110 T 730 60" fill="none" stroke="#38bdf8" stroke-width="3" opacity="0.8"/>
+          <path d="M 30 180 Q 150 90 270 140 T 510 110 T 730 60 L 730 250 L 30 250 Z" fill="url(#glow-grad)" opacity="0.1"/>
+
+          <!-- Grid ticks -->
+          <line x1="30" y1="210" x2="730" y2="210" stroke="rgba(255,255,255,0.04)"/>
+          <line x1="30" y1="150" x2="730" y2="150" stroke="rgba(255,255,255,0.04)"/>
+          <line x1="30" y1="90" x2="730" y2="90" stroke="rgba(255,255,255,0.04)"/>
+
+          <!-- Discrete data nodes -->
+          <circle cx="270" cy="140" r="5" fill="#f8fafc" stroke="#38bdf8" stroke-width="2"/>
+          <circle cx="510" cy="110" r="5" fill="#f8fafc" stroke="#38bdf8" stroke-width="2"/>
+          <circle cx="730" cy="60" r="5" fill="#f8fafc" stroke="#38bdf8" stroke-width="2"/>
+
+          <!-- Label bottom -->
+          <text x="30" y="270" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11">ENGINEERING DATA PIPELINE // VALIDATED RELATIONAL MODEL</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
