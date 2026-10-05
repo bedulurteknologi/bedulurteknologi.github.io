@@ -34,19 +34,22 @@ export const Header: React.FC = () => {
       const sections = ['work', 'expertise', 'about', 'technology', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
+      let currentSection = 'hero';
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
           const top = element.offsetTop;
           const height = element.offsetHeight;
           if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(sectionId);
+            currentSection = sectionId;
             break;
           }
         }
       }
+      setActiveSection(currentSection);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHomePage]);
@@ -82,7 +85,7 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-[#0E1015]/60 border border-white/[0.06] backdrop-blur-md rounded-full px-4 py-1.5 shadow-inner">
+          <nav className="hidden lg:flex items-center gap-1 bg-[#0E1015]/60 border border-white/[0.06] backdrop-blur-md rounded-full px-4 py-1.5 shadow-inner">
             {navItems.map((item) => {
               const isActive = isHomePage && activeSection === item.href.replace('#', '');
               return (
@@ -111,7 +114,7 @@ export const Header: React.FC = () => {
             <Link
               to="/#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 shadow-[0_0_15px_rgba(0,242,254,0.1)] group"
+              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 shadow-[0_0_15px_rgba(0,242,254,0.1)] group"
             >
               <span>Start a Project</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -120,7 +123,7 @@ export const Header: React.FC = () => {
             {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-[#0E1015] border border-white/10 text-slate-300 hover:text-white focus:outline-none"
+              className="lg:hidden p-2 rounded-lg bg-[#0E1015] border border-white/10 text-slate-300 hover:text-white focus:outline-none"
               aria-expanded={mobileMenuOpen} aria-controls="mobile-navigation" aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -130,7 +133,7 @@ export const Header: React.FC = () => {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 rounded-2xl bg-[#08090A]/95 backdrop-blur-2xl border border-white/10 p-5 shadow-2xl animate-in fade-in slide-in-from-top-3 duration-200">
+          <div className="lg:hidden mt-3 rounded-2xl bg-[#08090A]/95 backdrop-blur-2xl border border-white/10 p-5 shadow-2xl animate-in fade-in slide-in-from-top-3 duration-200">
             <nav id="mobile-navigation" className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <Link
@@ -159,4 +162,5 @@ export const Header: React.FC = () => {
     </header>
   );
 };
+
 

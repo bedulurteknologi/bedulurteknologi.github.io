@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { SmoothScroll } from './components/layout/SmoothScroll';
 import { Cursor } from './components/layout/Cursor';
 import { SectionScroll } from './components/layout/SectionScroll';
+import { BackToTop } from './components/layout/BackToTop';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
@@ -23,7 +24,7 @@ export function App() {
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </div>
-          <Footer />
+          <Footer /><BackToTop />
         </div>
       </SmoothScroll>
     </Router>
@@ -31,4 +32,5 @@ export function App() {
 }
 
 export default App;
+
 

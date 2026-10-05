@@ -105,3 +105,6 @@ section[id] { scroll-margin-top: 100px; }
 .project-featured .project-visual img { padding: 20px; }
 @media (max-width: 767px) { .portfolio-grid { grid-template-columns: 1fr; gap: 48px; } .project-featured .project-visual { aspect-ratio: 1; } .project-featured .project-visual img { padding: 0; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
+
+.back-to-top { bottom: max(20px, env(safe-area-inset-bottom)); }
+
