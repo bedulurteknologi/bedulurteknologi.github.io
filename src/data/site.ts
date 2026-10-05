@@ -8,9 +8,16 @@ export const siteConfig: SiteConfig = {
   headline: 'Technology Built Around Your Business.',
   subheadline:
     'We design and build reliable digital solutions — from custom business applications and mobile platforms to automation, cloud infrastructure, and IoT.',
-  founder: {
-    name: 'Dwi Hardianto',
-    role: 'Founder & Lead Technology Consultant',
-    bio: 'Technology professional with extensive experience across software development, business applications, infrastructure, systems integration, and digital transformation.',
-  },
+  founders: [
+    {
+      name: 'Dwi Hardianto',
+      role: 'Co-Founder & Lead Technology Consultant',
+      bio: 'Brings hands-on experience in software development, business applications, systems integration, and digital transformation.',
+    },
+    {
+      name: 'Imam Novtiananda',
+      role: 'Co-Founder & Lead Technology Consultant',
+      bio: 'Works alongside Dwi to shape solutions, guide project delivery, and support clients through close technical collaboration.',
+    },
+  ],
 };

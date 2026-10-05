@@ -52,11 +52,11 @@ export interface SiteConfig {
   tagline: string;
   headline: string;
   subheadline: string;
-  founder: {
+  founders: {
     name: string;
     role: string;
     bio: string;
-  };
+  }[];
 }
 
 export interface ContactConfig {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
 import { siteConfig } from '../../data/site';
-import { contactConfig } from '../../data/contact';
+import { contactConfig, contactPeople } from '../../data/contact';
 import { ArrowUpRight, HeartHandshake, Shield } from 'lucide-react';
 
 
@@ -22,10 +22,10 @@ export const AboutBti: React.FC = () => {
 
             <div className="space-y-4 text-base text-slate-300 leading-relaxed font-sans">
               <p>
-                In an industry often clouded by transactional agencies and over-engineered promises,
-                we believe technology projects deliver true value only when built through
-                collaboration, mutual trust, and a sincere understanding of the humans operating
-                them every single day.
+                BTI was built together by Dwi Hardianto and Imam Novtiananda. We lead as one team,
+                bringing our individual strengths to shared decisions and practical solutions.
+                Our partnership is rooted in trust, collaboration, and an understanding of the
+                people who use the systems we build.
               </p>
               <p>
                 Bedulur Teknologi Indonesia combines hands-on software engineering, business
@@ -69,21 +69,20 @@ export const AboutBti: React.FC = () => {
 
             <div className="space-y-5 relative z-10">
               <span className="text-[11px] font-mono-tech uppercase tracking-widest text-cyan-400 block">
-                LEADERSHIP & ARCHITECTURE
+                ONE TEAM. SHARED LEADERSHIP.
               </span>
 
-              <div>
-                <h3 className="text-2xl font-bold text-white tracking-tight">
-                  {siteConfig.founder.name}
-                </h3>
-                <p className="text-xs font-mono-tech text-slate-400 mt-1">
-                  {siteConfig.founder.role}
-                </p>
+              <p className="text-sm text-slate-400 leading-relaxed">Two co-founders. Equal leadership. Complementary expertise, working together from the first conversation to delivery.</p>
+              <div className="space-y-5">
+                {siteConfig.founders.map(founder => (
+                  <div key={founder.name} className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.08]">
+                    <h3 className="text-xl font-bold text-white tracking-tight">{founder.name}</h3>
+                    <p className="text-xs font-mono-tech text-cyan-300 mt-2">{founder.role}</p>
+                    <p className="text-sm text-slate-300 leading-relaxed mt-4">{founder.bio}</p>
+                    <a href={`mailto:${contactPeople.find(person => person.name === founder.name)?.email}`} className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-cyan-300 mt-4">Contact {founder.name.split(' ')[0]}<ArrowUpRight className="w-3.5 h-3.5" /></a>
+                  </div>
+                ))}
               </div>
-
-              <p className="text-sm text-slate-300 leading-relaxed">
-                {siteConfig.founder.bio}
-              </p>
 
               <div className="pt-4 border-t border-white/[0.06] space-y-2">
                 <span className="text-[11px] font-mono-tech uppercase text-slate-400 tracking-wider block mb-3">
@@ -107,7 +106,7 @@ export const AboutBti: React.FC = () => {
                     rel="noopener noreferrer"
                     className="flex items-center justify-between px-3.5 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06] text-xs text-slate-300 hover:text-cyan-300 hover:border-cyan-500/30 transition-all group"
                   >
-                    <span>GitHub Activity</span>
+                    <span>BTI on GitHub</span>
                     <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5" />
                   </a>
 
@@ -117,7 +116,7 @@ export const AboutBti: React.FC = () => {
                     rel="noopener noreferrer"
                     className="flex items-center justify-between px-3.5 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06] text-xs text-slate-300 hover:text-cyan-300 hover:border-cyan-500/30 transition-all group"
                   >
-                    <span>Upwork Enterprise Profile</span>
+                    <span>Upwork</span>
                     <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5" />
                   </a>
                 </div>
